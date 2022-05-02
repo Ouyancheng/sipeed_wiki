@@ -1,0 +1,239 @@
+{
+    "items": [
+        {
+            "label": "MaixPy3 是什么？能做什么？",
+            "file": "readme.md"
+        },
+        {
+            "label": "支持的开发板",
+            "file": "install/install.md",
+            "collapsed": false,
+            "items":[
+                {
+                    "label":"MaixPy3 IDE 介绍",
+                    "file":"tools/MaixPy3_IDE.md"
+                },
+                {
+                    "label":"如何连接开发板",
+                    "items":[
+                        {
+                            "label":"MaixII-Dock (V831)",
+                            "file":"tools/0.MaixII-Dock.ipynb"
+                        },
+                        {
+                            "label":"MaixSense (R329)",
+                            "file":"tools/maixsense.md"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label":"最新开发进度",
+            "file": "develop/readme.md"
+        },
+        {
+            "label": "来自社区分享的“亿”些资料",   
+            "items": [
+                {
+                    "label":"如何正确反馈问题并得到解决的方法",
+                    "file":"origin/helper.md"
+                },
+                {
+                    "label":"Python 的相关教程",
+                    "file": "origin/python.md",
+                    "items":[
+                        {
+                            "label":"收录国内 Python 基础教程",
+                            "file":"origin/video.md"
+                        },
+                        {
+                            "label": "大佬鼠の嵌入式 Python 入门教程 [1]",
+                            "file": "origin/hello_world.md"
+                        },
+                        {
+                            "label": "大佬鼠の嵌入式 Python 入门教程 [2]",
+                            "file": "origin/loop_python.md"
+                        }
+                    ]
+                },
+                {
+                    "label":"咸鱼菌の MaixII-Dock 上手系列教程",
+                    "url":"https://bbs.sipeed.com/user/909"
+                },
+                {
+                    "label":"喏呐の 【攻城狮成长记】",
+                    "file":"origin/xiaoxu.md"
+                }
+            ]
+        },
+        {
+            "label": "基本功能的使用",
+            "collapsed": false,
+            "items": [
+                {
+                    "label": "传统视觉",
+                    "items": [
+                        {
+                            "label": "背景知识",
+                            "file":"usage/vision/back-information.ipynb"
+                        },
+                        {
+                            "label": "基础用法",
+                            "file": "usage/vision/maixpy3-example.ipynb"
+                        },
+                        {
+                            "label": "图像处理",
+                            "file":"usage/vision/image_example.ipynb"
+                        }
+                    ]
+                },
+                {
+                    "label": "基础外设",
+                    "items": [
+                        {
+                            "label": "GPIO （点灯）",
+                            "file": "usage/hardware/GPIO.ipynb"
+                        },
+                        {
+                            "label": "I2C(与外设通讯)",
+                            "file": "usage/hardware/I2C.ipynb"
+                        },
+                        {
+                            "label": "PWM （脉冲宽度调制）",
+                            "file": "usage/hardware/PWM.ipynb"
+                        },
+                        {
+                            "label": "UART（串口）",
+                            "file": "usage/hardware/UART.ipynb"
+                        },
+                        {
+                            "label": "SPI （spidev）",
+                            "file": "usage/hardware/SPI.ipynb"
+                        },
+                        {
+                            "label": "EVENT （输入事件）",
+                            "file": "usage/hardware/event.ipynb"
+                        },
+                        {
+                            "label":"ADC* （模/数转换器）",
+                            "file":"usage/hardware/ADC.ipynb"
+                        },
+                        {
+                            "label":"WATCHDOG* （看门狗定时器）",
+                            "file":"usage/hardware/watchdog.ipynb"
+                        }
+                    ]
+                },
+                {
+                    "label": "网络功能",
+                    "file": "usage/net.md"
+                },
+                {
+                    "label": "媒体功能",
+                    "items": [
+                        {
+                            "label": "视频播放",
+                            "file": "usage/Audio/play_mp4.md"
+                        },
+                        {
+                            "label": "录音与播放",
+                            "file": "usage/Audio/audio.md"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label":"AI 神经网络功能",
+            "collapsed": false,
+            "items":[
+                {
+                    "label": "边缘检测",
+                    "file": "usage/AI_net/Edge_detection.ipynb"
+                },
+                {
+                    "label": "物品分类",
+                    "file": "usage/AI_net/resnet.ipynb"
+                },
+                {
+                    "label": "物体检测",
+                    "file": "usage/AI_net/yolo.ipynb"
+                },
+                {
+                    "label": "数字识别",
+                    "file":"usage/AI_net/number_recognize.ipynb"
+                },
+                {
+                    "label": "人脸识别",
+                    "file": "usage/AI_net/face_recognize.ipynb"
+                },
+                {
+                    "label": "自学习分类",
+                    "file":"usage/AI_net/self_learn.ipynb"
+                },
+                {
+                    "label": "本地训练 AI 模型",
+                    "items":[
+                        {
+                            "label": "深度神经网络基础知识（必看）",
+                            "file":"usage/train_AI/information.md"
+                        },
+                        {
+                            "label":"本地训练环境搭建",
+                            "file":"usage/train_AI/ready.md"
+                        },
+                        {
+                            "label": "边缘检测模型搭建过程",
+                            "file":"usage/train_AI/v831_sobel.ipynb"
+                        },
+                        {
+                            "label":"制作数据集",
+                            "file":"usage/train_AI/data.md"
+                        },
+                        {
+                            "label": "训练物体分类模型",
+                            "file":"usage/train_AI/train_resnet.md"
+                            
+                        },
+                        {
+                            "label": "训练物体检测模型",
+                            "file":"usage/train_AI/train_yolov2.md"
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        {
+            "label": "核心 API 手册（待整理）",
+            "items": [
+                {
+                    "label": "nn",
+                    "file": "api/maix/nn.md"
+                }
+            ]
+        },
+        {
+            "label": "MaixPy3 常见问题与解决方法",
+            "file":"question/maixpy3_faq.ipynb"
+        },
+        {
+            "label": "MaixPy 和 MaixPy3 的区别",
+            "url": "/blog/maix/difference.html"
+        },
+        {
+            "label": "让更多硬件加入 MaixPy3 吧!",
+            "items":[
+                {
+                    "label":"如何开发 MaixPy3 （过时）",
+                    "file":"others/develop.md"
+                },
+                {
+                    "label":"如何适配其他硬件平台（过时）",
+                    "file":"others/platform.md"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  class=""  class="" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+    <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+    
+    <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <meta name="html-generator" content="teedoc-plugin-jupyter-notebook-parser">
+    
+    <meta name="blog-generator" content="teedoc-plugin-blog">
+    
+    <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+    
+    <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+    
+    <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+    
+    <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+    
+    <script src="/static/js/theme_default/split.js"></script>
+    
+    <script src="/static/js/theme_default/jquery.min.js"></script>
+    
+    <script src="/static/js/theme_default/pre_main.js"></script>
+    
+    <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9cb07365544a53067c56c346c838181a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119047820-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'UA-119047820-5');
+    </script>
+    
+    <link rel="stylesheet" href="/static/css/gitalk/gitalk.css" type="text/css"/>
+    
+    <link rel="stylesheet" href="/static/css/gitalk/custom_gitalk.css" type="text/css"/>
+    
+    <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+    
+    <title>传统图像处理模块 - Sipeed Wiki</title>
+    <script type="text/javascript">js_vars = {}</script>
+</head>
+<body class="type_doc">
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo.svg" alt="sipeed wiki logo">
+                
+                
+                    <h2>wiki</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="sub_items "><a href="/hardware/zh/">产品</a><ul><li class=""><a  href="/hardware/zh/maix/index.html">Maix-I</a></li>
+<li class=""><a  href="/hardware/zh/maixII/index.html">Maix-II</a></li>
+<li class=""><a  href="/hardware/zh/lichee/index.html">Lichee Pi</a></li>
+<li class=""><a  href="/hardware/zh/tang/index.html">Tang</a></li>
+<li class=""><a  href="/hardware/zh/longan/Nano/Longan_nano.html">Longan</a></li>
+<li class=""><a  href="/hardware/zh/modules_spmod/spmod_extender.html">SP-Mod</a></li>
+</ul>
+</li>
+<li class="sub_items "><a >软件文档</a><ul><li class=""><a  href="/soft/maixpy/zh/index.html">MaixPy</a></li>
+<li class=""><a  href="/soft/maixpy3/zh/index.html">MaixPy3</a></li>
+<li class=""><a  href="/soft/Lichee/zh/index.html">Lichee</a></li>
+</ul>
+</li>
+<li class="sub_items "><a >云服务</a><ul><li class=""><a target="_blank" href="https://www.maixhub.com">AI 训练平台</a></li>
+<li class=""><a target="_blank" href="https://dl.sipeed.com/">下载中心</a></li>
+</ul>
+</li>
+<li class=""><a  href="/community.html">在线社群</a></li>
+<li class=""><a  href="/store.html">线上商城</a></li>
+<li class=""><a  href="/change_doc.html">贡献文档</a></li>
+<li class=""><a  href="/news/">最新动态</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/sipeed">Github </a></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="google_translate_element"><img class="icon" src="/static/image/google_translate/translate.svg"/>Translate</a></li></ul><ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/index.html"><span class="label">MaixPy3 是什么？能做什么？</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/install/install.html"><span class="label">支持的开发板</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/tools/MaixPy3_IDE.html"><span class="label">MaixPy3 IDE 介绍</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">如何连接开发板</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/tools/0.MaixII-Dock.html"><span class="label">MaixII-Dock (V831)</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/tools/maixsense.html"><span class="label">MaixSense (R329)</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/develop/index.html"><span class="label">最新开发进度</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">来自社区分享的“亿”些资料</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/helper.html"><span class="label">如何正确反馈问题并得到解决的方法</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/python.html"><span class="label">Python 的相关教程</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/video.html"><span class="label">收录国内 Python 基础教程</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/hello_world.html"><span class="label">大佬鼠の嵌入式 Python 入门教程 [1]</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/loop_python.html"><span class="label">大佬鼠の嵌入式 Python 入门教程 [2]</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="https://bbs.sipeed.com/user/909" ><span class="label">咸鱼菌の MaixII-Dock 上手系列教程</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/origin/xiaoxu.html"><span class="label">喏呐の 【攻城狮成长记】</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">基本功能的使用</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active_parent no_link"><a><span class="label">传统视觉</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/vision/back-information.html"><span class="label">背景知识</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/vision/maixpy3-example.html"><span class="label">基础用法</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/soft/maixpy3/zh/usage/vision/image_example.html"><span class="label">图像处理</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">基础外设</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/GPIO.html"><span class="label">GPIO （点灯）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/I2C.html"><span class="label">I2C(与外设通讯)</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/PWM.html"><span class="label">PWM （脉冲宽度调制）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/UART.html"><span class="label">UART（串口）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/SPI.html"><span class="label">SPI （spidev）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/event.html"><span class="label">EVENT （输入事件）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/ADC.html"><span class="label">ADC* （模/数转换器）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/hardware/watchdog.html"><span class="label">WATCHDOG* （看门狗定时器）</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/net.html"><span class="label">网络功能</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">媒体功能</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/Audio/play_mp4.html"><span class="label">视频播放</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/Audio/audio.html"><span class="label">录音与播放</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">AI 神经网络功能</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/Edge_detection.html"><span class="label">边缘检测</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/resnet.html"><span class="label">物品分类</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/yolo.html"><span class="label">物体检测</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/number_recognize.html"><span class="label">数字识别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/face_recognize.html"><span class="label">人脸识别</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/AI_net/self_learn.html"><span class="label">自学习分类</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">本地训练 AI 模型</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/information.html"><span class="label">深度神经网络基础知识（必看）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/ready.html"><span class="label">本地训练环境搭建</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/v831_sobel.html"><span class="label">边缘检测模型搭建过程</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/data.html"><span class="label">制作数据集</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/train_resnet.html"><span class="label">训练物体分类模型</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/usage/train_AI/train_yolov2.html"><span class="label">训练物体检测模型</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">核心 API 手册（待整理）</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/api/maix/nn.html"><span class="label">nn</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/question/maixpy3_faq.html"><span class="label">MaixPy3 常见问题与解决方法</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/blog/maix/difference.html" ><span class="label">MaixPy 和 MaixPy3 的区别</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">让更多硬件加入 MaixPy3 吧!</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/others/develop.html"><span class="label">如何开发 MaixPy3 （过时）</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/soft/maixpy3/zh/others/platform.html"><span class="label">如何适配其他硬件平台（过时）</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            <h1>传统图像处理模块</h1>
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            <span class="article_date">
+                                
+                            </span>
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/sipeed/sipeed_wiki/blob/main/docs/soft/maixpy3/zh/usage/vision/image_example.ipynb" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_content">
+                        <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<thead><tr>
+<th>更新时间</th>
+<th>负责人</th>
+<th>内容</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022年4月13日</td>
+<td>Ray</td>
+<td>初次编写文档</td>
+<td>---</td>
+</tr>
+<tr>
+<td>2022年4月24日</td>
+<td>Coty</td>
+<td>添加AprilTag识别、三维坐标系以及红蓝小球追踪</td>
+<td>---</td>
+</tr>
+<tr>
+<td>2022年4月25日</td>
+<td>Coty</td>
+<td>添加AprilTag多个三维坐标显示，二维码和条形码的定位、读取信息</td>
+<td>---</td>
+</tr>
+<tr>
+<td>2022年4月28日</td>
+<td>Dls</td>
+<td>修订排版，以下功能仅在 0.4.7 以上版本支持</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="%E9%A2%9C%E8%89%B2%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9D%97">&#39068;&#33394;&#32479;&#35745;&#27169;&#22359;<a class="anchor-link" href="#%E9%A2%9C%E8%89%B2%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9D%97"> </a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">from maix import image,display,camera
+ROI=(80,30,15,15)
+while True:
+    img = camera.capture()
+    tmp = img.get_statistics(roi=ROI)
+    display.show(img)
+
+    print("l Mean Median Mode STDev Min Max LQ UQ", tmp[0:8])
+    print("a Mean Median Mode STDev Min Max LQ UQ", tmp[8:16])
+    print("b Mean Median Mode STDev Min Max LQ UQ", tmp[16:24])
+
+    # example data
+
+    # openmv
+    # "l_mean":42, "l_median":38, "l_mode":3, "l_stdev":27, "l_min":0, "l_max":100, "l_lq":19, "l_uq":65,
+    # "a_mean":3, "a_median":1, "a_mode":0, "a_stdev":22, "a_min":-59, "a_max":81, "a_lq":-7, "a_uq":18,
+    # "b_mean":5, "b_median":2, "b_mode":2, "b_stdev":27, "b_min":-88, "b_max":76, "b_lq":-12, "b_uq":25
+
+    # maixpy3
+    # 42, 37, 3, 27, 0, 98, 18, 66,
+    # 2, -1, -1, 22, -72, 83, -8, 15,
+    # 7, 1, -1, 26, -73, 76, -11, 25
+</code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/jpeg;base64,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"
+>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><code>[82, 98, 98, 19, 46, 98, 61, 98, 10, -1, -1, 15, -3, 44, -1, 20, 5, -1, -1, 9, -6, 31, -1, 13]</code></pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>
+Traceback (most recent call last):
+  File &#34;&lt;string&gt;&#34;, line unknown, in &lt;module&gt;
+Remote.KeyboardInterrupt
+</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="%E9%A2%9C%E8%89%B2%E8%BF%BD%E8%B8%AA%E6%A8%A1%E5%9D%97">&#39068;&#33394;&#36861;&#36394;&#27169;&#22359;<a class="anchor-link" href="#%E9%A2%9C%E8%89%B2%E8%BF%BD%E8%B8%AA%E6%A8%A1%E5%9D%97"> </a></h2><p>以红蓝小球追踪为例，还有待整理（20220428）。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">#!/usr/bin/python3
+
+from maix import image, display, camera, gpio
+import serial,time
+
+
+ser = serial.Serial("/dev/ttyS1",115200,timeout=0.2)    # 连接串口
+
+tmp = ser.readline()
+print('serial test start ...') 
+
+ser.write(b" \r\n")
+time.sleep(1)
+ser.write(b"{V831:Ready!}\n")
+
+set_LAB = [[(10, 35, -37, 70, 73, 62)],     #red
+           [(10, 5, -87, 79, 62, -28)]]     #blue
+#LAB阈值的初始化格式:[L_MIN,A_MIN,B_MIN,L_MAX,A_MAX,B_MAX]
+
+flag = '1'
+now_time = time.time()
+
+ser.write(b"ok\n")
+
+while True:
+    img = camera.capture()
+    for j in range(2):
+        blobs = img.find_blobs(set_LAB[j])    #在图片中查找lab阈值内的颜色色块
+        if blobs :
+            for i in blobs:
+                size = i["w"] * i["h"]#最大是240 *240也就是57600
+                if size > 2000 : 
+                    x_start = i["x"]
+                    x_end = i["x"] + i["w"]
+                    x_center = int((x_start + x_end) / 2)    #中心坐标
+                    y_start = i["y"]
+                    y_end = i["y"] + i["h"]
+                    y_center = int((y_start + y_end) / 2)
+                    m = max((x_center - i["w"]*0.3) ,0)
+                    n = max((y_center - i["h"]*0.3) ,0)
+                    m = min((x_center - i["w"]*0.3) ,240)
+                    n = min((y_center - i["h"]*0.3) ,240)
+                    mk = [int(m),int(n), 20, 20]
+
+                    git_color = img.get_blob_color(mk, 0, 0)
+                    img.draw_rectangle(9, 9, 21, 21, color=(255, 255, 255), thickness=1) #左上角颜色区域画出来
+                    color = (int(git_color[0]), int(git_color[1]), int(git_color[2]))
+                    img.draw_rectangle(10, 10, 20, 20, color, thickness=-1) #将颜色填充到左上角
+                    img.draw_circle(x_center, y_center, int(i["h"]/2 + 8), color, thickness=3)   #画一个中心点在（50,50），半径为20的空心 圆
+                    if(j == 0):
+                        string = 'Red'
+                    elif j == 1 :
+                        string = 'Blue'
+                    str_size = image.get_string_size(string)
+                    img.draw_string(x_center - int(str_size[0]/2) - 5, y_start - 35, string, scale = 1.5,color = (int(git_color[0]), int(git_color[1]), int(git_color[2])), thickness = 2)
+                    if flag == '1' :
+                        flag = '0'
+                        now_time = time.time() #time.asctime()
+                    
+    display.show(img)
+    time_t = time.time() - now_time
+    if(time_t > 0.03) :
+        if flag == '0':
+            tep = "{V831:Space_x->" + str(x_center-120) + "}"   #先获得数据
+            ser.write(tep.encode("utf-8"))                      #变成串口能发送的格式发出去
+            flag = 'x'                                          #先发X再发Y，需要等等不然32会反映不过来，但又不能阻塞
+            
+        elif flag == 'x' :
+            flag = '1'
+            tep = "{V831:Space_y->" + str(y_center-120) + "}"   #先获得数据
+            ser.write(tep.encode("utf-8"))                      #变成串口能发送的格式发出去
+
+        </code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码配合其他MCU运行效果演示如图所示:</strong></p>
+<p><img src="../asserts/findball.gif" alt="演示1"></p>
+<p>从演示图可以看出，MaixII-Dock 成功获得了小球距离中心点的偏差，通过串口发送数据给 MCU ，通过 PID 控制舵机带动摄像头转动，使得小球重新回归中心点位。</p>
+<div class="highlight"><pre><span></span><span class="n">set_LAB</span> <span class="o">=</span> <span class="p">[[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="o">-</span><span class="mi">37</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">62</span><span class="p">)],</span>    <span class="c1">#red</span>
+            <span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">87</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="o">-</span><span class="mi">28</span><span class="p">)]]</span>     <span class="c1">#blue</span>
+</pre></div>
+<p>对于LAB阈值的设置需要注意的是初始化的格式，<strong>格式为:[L_MIN , A_MIN , B_MIN , L_MAX , A_MAX , B_MAX]</strong>，此处初始化了红色和蓝色的LAB阈值。</p>
+<div class="highlight"><pre><span></span><span class="n">blobs</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">find_blobs</span><span class="p">(</span><span class="n">set_LAB</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</pre></div>
+<p>find_blobs() 函数目的是寻找对应的色块。</p>
+<p>将目标区域的信息获取之后使用 <strong>img.draw_circle()</strong> 函数将目标圈住，最后将球距离中心点的偏差值( x 和 y 的偏差值)发送至 MCU，由 MCU 进行后续的计算。</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="%E6%A0%87%E8%AE%B0%E8%BF%BD%E8%B8%AA%E6%A8%A1%E5%9D%97">&#26631;&#35760;&#36861;&#36394;&#27169;&#22359;<a class="anchor-link" href="#%E6%A0%87%E8%AE%B0%E8%BF%BD%E8%B8%AA%E6%A8%A1%E5%9D%97"> </a></h2><h3 id="AprilTag-%E6%A0%87%E8%AE%B0%E8%BF%BD%E8%B8%AA%E6%B5%8B%E8%B7%9D">AprilTag &#26631;&#35760;&#36861;&#36394;&#27979;&#36317;<a class="anchor-link" href="#AprilTag-%E6%A0%87%E8%AE%B0%E8%BF%BD%E8%B8%AA%E6%B5%8B%E8%B7%9D"> </a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">#!/usr/bin/python3
+from maix import display, camera 
+
+f_x = (6 / 5.76) * 240 # 镜头的焦距是6MM，感光cmos的长是5.76mm，240像素是屏幕的长
+f_y = (6 / 3.24) * 240 # 镜头的焦距是6MM，感光cmos的宽是3.24mm，240像素是屏幕的宽
+
+c_x = 240 * 0.5  # 屏幕分辨率的一半
+c_y = 240 * 0.5  # 屏幕分辨率的一半
+
+while True:
+    t = camera.capture()
+    mks = t.find_apriltags(families = 16,fx = f_x,fy = f_y,cx = c_x,cy = c_y)
+    for mk in mks:
+      x_tran = mk['x_translation']
+      y_tran = mk['y_translation']
+      z_tran = mk['z_translation']
+      #家族信息
+      fam = mk['family']
+      #外框数据
+      x, y, w, h, id  =  mk['x'], mk['y'], mk['w'], mk['h'], mk['id']
+      #内框数据
+      x1,y1 = mk['corners'][0]   #访问字典的列表
+      x2,y2 = mk['corners'][1]
+      x3,y3 = mk['corners'][2]
+      x4,y4 = mk['corners'][3]
+      z1,z2 = mk['centroid']
+      #虚拟距离
+      length = (x_tran*x_tran + y_tran*y_tran + z_tran*z_tran)**0.5
+
+      #画外框
+      t.draw_rectangle(x, y, x + w, y + h, color=(0, 0, 255), thickness = 2) 
+      #打印ID
+      t.draw_string(int(x + w*0.15) , int(y + h*0.15) , str(id), scale = 4.0, color = (255, 0, 0), thickness = 3)  
+      #画内框
+      t.draw_line(x1, y1, x2, y2, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x2, y2, x3, y3, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x3, y3, x4, y4, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x4, y4, x1, y1, color = (0, 255, 0), thickness = 3)  
+      
+      if(fam == 16):
+        t.draw_string(x, y-20, "TAG36H11", scale = 1.0, color = (255, 0, 0), thickness = 2)
+      
+      t.draw_string(x, y+h+15, str(int(length * 3.0649 - 2))+" cm", scale = 1.0, color = (255, 0, 0), thickness = 2)  
+
+    display.show(t)</code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码运行效果演示如图所示：</strong></p>
+<p><img src="../asserts/findtag1.gif" alt="演示1"><img src="../asserts/findtag2.gif" alt="演示2"></p>
+<p>在<strong><em>演示1</em></strong>中可以看到 MaixII-Dock 能够清楚地跟踪标签四个点的坐标并且显示出来(绿色框)，以及能够跟踪标签的最大框的坐标(蓝色框)，其实用户想要获取这些信息并不难。</p>
+<p>如果想要获取标签四个点的坐标只需要获取字典中键值为 corners 的列表中的值即可，而想获得外框(蓝色框)的坐标只需要获取字典中键值为 x , y , w , h 的的值，最后像代码中所操作的一样即可。</p>
+<p>字典的键值如下所示：
+'x' , 'y' , 'w' , 'h' , 'id' , 'family' , 'centroid' , 'corners' , 'x_translation' , 'y_translation' , 'z_translation' , 'decision_margin' , 'hamming' , 'goodness' , 'x_rotation' , 'y_rotation' , 'z_rotation'。</p>
+<p>在此仅介绍简单几个键值的含义。'x' , 'y' , 'w' , 'h' 键值返回的值分别是外框左上角 x 坐标和 y 坐标以及外框的长和宽。<strong>特别注意的是键值 'corners' 返回的是一个列表，列表中的值代表着内框的四个顶点的坐标。</strong></p>
+<p>在<strong><em>演示2</em></strong>中可以看到两个标签距离摄像头大概是22cm左右，<strong>那么究竟是如何测出这个距离的呢？</strong>请接着往下看：</p>
+<p><strong>对于测距算法，需要知道的是：</strong></p>
+<p>fx，以像素为单位的相机 X 焦距；</p>
+<p>fy，以像素为单位的相机 Y 焦距；</p>
+<p>cx，图像中心image.width()/2；</p>
+<p>cy，图像中心image.height()/2；</p>
+<p>具体 fx , fy , cx , cy 的计算在上诉代码注释区。</p>
+<ul>
+<li><p><strong>测距算法使用流程：</strong>首先将 fx ，fy ，cx ，cy 传入 find_apriltags() 函数内部，读取返回的 x_translation ，y_translation ，z_translation 参数。由length = (x_tran<em>x_tran + y_tran</em>y_tran + z_tran*z_tran)**0.5 可以算出虚拟距离，这个虚拟距离 length 乘上一个比例系数 K 才是最终物体离 CMOS 的最终距离。</p>
+</li>
+<li><p><strong>比例系数 K 的计算：</strong>假设我们现在将一个物体放置在离 CMOS 距离 20cm 的地方，然后直接打印出 length 计算的结果，此时的 length 假设是 6.525 ，那么 K = 20 / 6.525 = 3.065。这时我们将 length 乘上这个比例系数 K 得出的结果就是真实的距离。<strong>也就是说在第一次使用的时候需要确定比例系数 K ,在确定了 K 的大小过后，以后的使用就直接使用计算出来的比例系数 K 乘上计算出来的虚拟距离 length ，就是最后真实的距离。</strong>（需要注意的是：最后算出的真实距离并不是标签距离摄像头的距离，而是标签距离CMOS的距离。<strong>以MaixII-Dock为例，标配的摄像头镜头距离CMOS的距离大概是2cm，那么需要将最后算出的距离再减去2cm最后得出的结果才是标签距离摄像头的距离。</strong>）</p>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="AprilTag-%E8%8E%B7%E5%8F%96%E8%A7%92%E5%BA%A6%E4%BF%A1%E6%81%AF%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%BB%B4%E5%9D%90%E6%A0%87%E7%9A%84%E6%98%BE%E7%A4%BA">AprilTag &#33719;&#21462;&#35282;&#24230;&#20449;&#24687;&#20197;&#21450;&#19977;&#32500;&#22352;&#26631;&#30340;&#26174;&#31034;<a class="anchor-link" href="#AprilTag-%E8%8E%B7%E5%8F%96%E8%A7%92%E5%BA%A6%E4%BF%A1%E6%81%AF%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%BB%B4%E5%9D%90%E6%A0%87%E7%9A%84%E6%98%BE%E7%A4%BA"> </a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">#!/usr/bin/python3
+from maix import display, camera 
+import math
+
+f_x = (6 / 5.76) * 240 # 镜头的焦距是6MM，感光cmos的长是5.76mm，240像素是屏幕的长
+f_y = (6 / 3.24) * 240 # 镜头的焦距是6MM，感光cmos的宽是3.24mm，240像素是屏幕的宽
+
+c_x = 240 * 0.5 # 屏幕分辨率的一半
+c_y = 240 * 0.5 # 屏幕分辨率的一半
+
+while True:
+    t = camera.capture()
+    mks = t.find_apriltags(families = 16,fx = f_x,fy = f_y,cx = c_x,cy = c_y)
+    for mk in mks:
+
+      #内框数据
+      x1,y1 = mk['corners'][0]   #访问字典的列表
+      x2,y2 = mk['corners'][1]
+      x3,y3 = mk['corners'][2]
+      x4,y4 = mk['corners'][3]
+      
+      #获取角度信息
+      x_rol = mk['x_rotation']
+      y_rol = mk['y_rotation']
+      z_rol = mk['z_rotation']
+      #画内框
+      t.draw_line(x1, y1, x2, y2, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x2, y2, x3, y3, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x3, y3, x4, y4, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x4, y4, x1, y1, color = (0, 255, 0), thickness = 3)  
+    
+      #显示当前角度
+      t.draw_string(2, 2, "X rotation is: "+str(int(180*x_rol/3.14))+" Angle", scale = 1.0, color = (0, 0, 255), thickness = 1)    #90° ~ 270°  正对着是180°。上下
+      t.draw_string(2, 15, "Y rotation is: "+str(int(180*y_rol/3.14))+" Angle", scale = 1.0, color = (0, 0, 255), thickness = 1)   #0° ~ 90°，270° ~ 360°   正对着是0°。 左右
+      t.draw_string(2, 30, "Z rotation is: "+str(int(180*z_rol/3.14))+" Angle", scale = 1.0, color = (0, 0, 255), thickness = 1)   #0° ~ 360°   正对着是0°。 顺时针旋转增加    
+
+      #右下角画框
+      t.draw_string(140, 120, "Space", scale = 1.0, color = (125, 0, 0), thickness = 2)  
+      t.draw_rectangle(140, 140, 235, 235, color=(128, 128, 128), thickness=2) 
+      
+      #画出三维坐标系
+      t.draw_line(180, 200, int(180 - 40 * math.sin(z_rol)), int(240 - 40 * math.cos(z_rol) + 40 * math.cos(x_rol)), color = (255, 0, 0), thickness = 3)   
+      t.draw_line(180, 200, int(140 + 40 * math.cos(z_rol) + 40 * math.cos(y_rol)), int(200 - 40 * math.sin(z_rol)), color = (0, 255, 0), thickness = 3) 
+      t.draw_line(180, 200, int(180 + 40 * math.sin(y_rol)),int(200 - 40 * math.sin(x_rol)), color = (0, 0, 255), thickness = 3) 
+
+    display.show(t)</code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码运行效果演示如图所示：</strong></p>
+<p><img src="../asserts/rotation.gif" alt="三维坐标"></p>
+<p>可以看出在显示屏左上角打印出了标签的当前角度信息，那么如何获取这些信息呢？</p>
+<ul>
+<li><p>如果想要获取标签的角度信息只需要获取字典中键值分别是 x_rotation，y_rotation，z_rotation  的的值即可，<strong>需要指出的是获取的值是弧度，需要转换成角度的话需要使用弧度转角度公式</strong>。将获取的弧度其乘上 180 再除以 3.14 即可（3.14选取了圆周率小数点后两位）。</p>
+</li>
+<li><p>x_rotation 转为角度后取值范围是 <strong>[90°,270°]</strong> 正对着标签时显示为 <strong>180°</strong> ，在标签前后移动时变化。 y_rotation 转为角度后取值范围是 <strong>[0°,90°]U[270°，360°]</strong> 正对着标签时显示为 <strong>0°</strong> ，在标签左右移动时变化。z_rotation 转为角度后取值范围是 <strong>[0°,360°]</strong> 正对着标签时显示为 <strong>0°</strong> ,在标签旋转时变化。</p>
+</li>
+</ul>
+<p><strong>三维坐标系显示</strong></p>
+<p>三维坐标系生成代码如上代码中所示，将每一个轴的变化线性叠加即可获得一个不太准确的三维坐标系。</p>
+<ul>
+<li><p>前后的变化会导致 x_rotation 的变化。当 x_rotation 变化时，X 轴 y 的长度应该为 40 * cos(x_rol) ，但是 x_rotation 转换为角度的范围是 [90°,270°] 且正对标签时为 180°，画出 cos 图发现在定义域内 180° 点为极小值点，且整个取值区域内 cos 值都为负，我们不希望得到这样的图像。解决方法是将 cos 向上平移 40 ，使得 180° 点cos值为 0 ，而 90° 和 270° 为区间的最高点，是一个正数。此时终点 y 的结果为 <strong>200 + 40 + 40 * cos(x_rol)</strong>，即转至 90° 或 270° 时，X 轴的长度为 200，与开始点重合，实际长度为 0 。而对于 Z 轴的长度处理思路相似，但是 Z 轴的投影使用的是 sin 函数，在 [90°,270°] 这个区间 90° 是极大值点且此时 sin 值为正数，270° 是极小值点且此时 sin 值为负数，正好符合实际需求，故不作处理。最后 Z 轴终点 y 的结果为<strong>200 - 40 * sin(x_rol)</strong>。</p>
+</li>
+<li><p>左右的变化会导致 y_rotation 的变化。当 y_rotation 变化时，Y 轴 x 的长度应该为 40 * cos(y_rol)，但是 y_rotation 转换为角度的范围是 [0°,90°]U[270°，360°]，且正对标签时为 0°，画出cos图发现图像被分割为了两个部分，但是不影响使用，因为在角度 [270°，360°] 内会随着倾角的增大而逐渐减小，所以最后终点 x 的结果是 <strong>180 + 40 * cos(y_rol)</strong>。而对于 Z 轴的长度处理思路相似，此处不做过多解释，最终 Z 轴终点 x 的结果为<strong>180 + 40 * sin(y_rol)</strong>。</p>
+</li>
+<li><p>旋转的变化会导致 z_rotation 的变化。当 z_rotation 变化时，X 轴 x 的长度应该为 40 * sin(z_rol)，但此时由于 z_rotation 转换而来的角度会随着逆时针的转动而增大，所以 X 轴 x 的长度应该乘以 <strong>-1</strong> ，这样才能符合实际变化，最后终点 x 的结果为<strong>180 - 40 * sin(z_rol)</strong>。X 轴 y 的长度为 40 * cos(z_rol)，但是屏幕从上而下的像素点的值是逐渐增大的，所以虽然 cos 值在区间内部的变化是符合我们的预期，但是依旧要乘以 <strong>-1</strong>，最后终点 y 结果为 <strong>200 - 40 * cos(z_rol)</strong>。对于 Y 轴的 x 和 y 的长度处理思路与上诉一样，但对于 x 的长度需要减去一个 40 抵消掉初始增量，最后终点结果分别为 <strong>180 - 40 + 40 * cos(z_rol)</strong> 和 <strong>200 - 40 * sin(z_rol)</strong>。</p>
+</li>
+</ul>
+<p><strong>最后将所有计算式线性叠加即可获得最终三维坐标系。由于算式是基于正对着标签码进行计算的，所以对于非正拿标签的情况，坐标系会出现混乱</strong></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="AprilTag%E5%A4%9A%E4%B8%AA%E4%B8%89%E7%BB%B4%E5%9D%90%E6%A0%87%E7%9A%84%E6%98%BE%E7%A4%BA">AprilTag&#22810;&#20010;&#19977;&#32500;&#22352;&#26631;&#30340;&#26174;&#31034;<a class="anchor-link" href="#AprilTag%E5%A4%9A%E4%B8%AA%E4%B8%89%E7%BB%B4%E5%9D%90%E6%A0%87%E7%9A%84%E6%98%BE%E7%A4%BA"> </a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">from maix import display, camera 
+import math
+
+f_x = (6 / 5.76) * 240 
+f_y = (6 / 3.24) * 240 
+
+c_x = 240 * 0.5 
+c_y = 240 * 0.5 
+
+while True:
+    t = camera.capture()
+    mks = t.find_apriltags(families = 16,fx = f_x,fy = f_y,cx = c_x,cy = c_y)
+    for mk in mks:
+
+      #内框数据
+      x1,y1 = mk['corners'][0]   #访问字典的列表
+      x2,y2 = mk['corners'][1]
+      x3,y3 = mk['corners'][2]
+      x4,y4 = mk['corners'][3]
+      
+      x_rol = mk['x_rotation']
+      y_rol = mk['y_rotation']
+      z_rol = mk['z_rotation']
+      #画内框
+      t.draw_line(x1, y1, x2, y2, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x2, y2, x3, y3, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x3, y3, x4, y4, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x4, y4, x1, y1, color = (0, 255, 0), thickness = 3)  
+    
+      
+      t.draw_string(x4, y4, "xR: "+str(int(180*x_rol/3.14)), scale = 1.0, color = (255, 0, 0), thickness = 2)    #90° ~ 270°  正对着是180°。上下
+      t.draw_string(x4, y4 + 15, "yR: "+str(int(180*y_rol/3.14)), scale = 1.0, color = (255, 0, 0), thickness = 2)   #0° ~ 90°，270° ~ 360°   正对着是0°。 左右
+      t.draw_string(x4, y4 + 30, "zR: "+str(int(180*z_rol/3.14)), scale = 1.0, color = (255, 0, 0), thickness = 2)   #0° ~ 360°   正对着是0°。 顺时针旋转增加
+      
+      t.draw_line(x4, y4, int(x4 - 40 * math.sin(z_rol)), int(y4 + 40 - 40 * math.cos(z_rol) + 40 * math.cos(x_rol)), color = (255, 0, 0), thickness = 3)   
+      t.draw_line(x4, y4, int(x4 - 40 + 40 * math.cos(z_rol) + 40 * math.cos(y_rol)), int(y4 - 40 * math.sin(z_rol)), color = (0, 0, 0), thickness = 3) 
+      t.draw_line(x4, y4, int(x4  + 40 * math.sin(y_rol)),int(y4 - 40 * math.sin(x_rol)), color = (0, 0, 255), thickness = 3) 
+    display.show(t)</code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码运行效果演示如图所示:</strong></p>
+<p><img src="../asserts/rotation_more.gif" alt="演示1"></p>
+<p>在演示图中可以看到在每个标签上都打印出了一个三维坐标系，并且能够很好显示当前标签的角度信息。只需要将三维坐标系的原点定义在标签的左下角，且将三维坐标画线函数放置在for循环内部，即可出现如上图所示效果。</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="%E5%AE%9A%E4%BD%8D%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%8F%8A%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C">&#23450;&#20301;&#20108;&#32500;&#30721;&#21450;&#35782;&#21035;&#32467;&#26524;<a class="anchor-link" href="#%E5%AE%9A%E4%BD%8D%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%8F%8A%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C"> </a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">#!/usr/bin/python3
+from maix import display, camera 
+
+while True:
+    t = camera.capture()
+    mks = t.find_qrcodes()
+    for mk in mks:
+      #外框数据
+      X = mk['x']
+      Y = mk['y']
+      W = mk['w']
+      H = mk['h']
+      
+      #二维码信息
+      string = mk['payload']
+
+      #内框数据
+      x1,y1 = mk['corners'][0]   #访问字典的列表
+      x2,y2 = mk['corners'][1]
+      x3,y3 = mk['corners'][2]
+      x4,y4 = mk['corners'][3]
+      
+      #画外框
+      t.draw_rectangle(X, Y, X + W, Y + H, color=(0, 0, 255), thickness = 2) 
+      #打印信息
+      t.draw_string(int(X) , int(Y - 35) , str(string), scale = 2.0, color = (255, 0, 0), thickness = 2)  #内框ID
+      #画内框
+      t.draw_line(x1, y1, x2, y2, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x2, y2, x3, y3, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x3, y3, x4, y4, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x4, y4, x1, y1, color = (0, 255, 0), thickness = 3)  
+
+    display.show(t)
+    </code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码运行效果演示如图所示：</strong></p>
+<p><img src="../asserts/qrcode.gif" alt="演示1"></p>
+<p>在演示中可以看到 MaixII-Dock 能够清楚地跟踪并且框住二维码，将二维码信息打印到屏幕上。那么如何获取二维码坐标值以及信息呢？其实非常简单。</p>
+<ul>
+<li>获取外框坐标：读取 <strong>find_qrcodes()</strong> 函数返回的字典中键值为: <strong>x , y , w , h</strong> 的值作为二维码外框的坐标信息(蓝色框)。</li>
+<li>获取内框坐标：读取 <strong>find_qrcodes()</strong> 函数返回的字典中键值为: <strong>corners</strong> 的列表中的值作为二维码内框的坐标(绿色框)。</li>
+<li>获取二维码信息：读取 <strong>find_qrcodes()</strong> 函数返回的字典中键值为: <strong>payload</strong> 的值作为二维码信息。</li>
+</ul>
+<p>字典的键值如下所示：'x' , 'y' , 'w' , 'h' , 'payload' , 'version' , 'ecc_level' , 'mask' , 'data_type' , 'eci' , 'corners'。</p>
+<p>在此仅介绍简单几个键值的含义。'x' , 'y' , 'w' , 'h' 键值返回的值分别是外框左上角 x 坐标和 y 坐标以及外框的长和宽。<strong>而键值 'payload' 返回的值是二维码的信息，例如在二维码生成网站上输入 "Sipeed" 生成二维码，此时这个二维码的 'payload' 就是 "Sipeed"。</strong></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="%E5%AE%9A%E4%BD%8D%E6%9D%A1%E5%BD%A2%E7%A0%81%E5%8F%8A%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C">&#23450;&#20301;&#26465;&#24418;&#30721;&#21450;&#35782;&#21035;&#32467;&#26524;<a class="anchor-link" href="#%E5%AE%9A%E4%BD%8D%E6%9D%A1%E5%BD%A2%E7%A0%81%E5%8F%8A%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C"> </a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+     <pre><code class="python language-python">#!/usr/bin/python3
+from maix import display, camera 
+
+while True:
+    t = camera.capture()
+    mks = t.find_barcodes()
+    for mk in mks:
+      
+      #二维码信息
+      string = mk['payload']
+      TYPE = mk['type']
+      
+      #内框数据
+      x1,y1 = mk['corners'][0]   #访问字典的列表
+      x2,y2 = mk['corners'][1]
+      x3,y3 = mk['corners'][2]
+      x4,y4 = mk['corners'][3]
+
+      #画内框
+      t.draw_line(x1, y1, x2, y2, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x2, y2, x3, y3, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x3, y3, x4, y4, color = (0, 255, 0), thickness = 3)  
+      t.draw_line(x4, y4, x1, y1, color = (0, 255, 0), thickness = 3)  
+      
+      #打印信息
+      t.draw_string(int(x1) , int(y1 - 35) , str(string), scale = 2.0, color = (255, 0, 0), thickness = 2)  
+      
+      t.draw_string(int(x1) , int(y1 + 35) , str(TYPE), scale = 2.0, color = (255, 0, 0), thickness = 2)  
+
+    display.show(t)
+    </code></pre>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>此代码运行效果演示如图所示：</strong></p>
+<p><img src="../asserts/barcode.gif" alt="演示1"></p>
+<p>在演示中可以看到 MaixII-Dock 能够清楚地跟踪并且框住条形码，将条形码信息以及类型打印到屏幕上。那么如何获取二维码坐标值以及相关信息呢？其实非常简单。</p>
+<ul>
+<li>获取条形码坐标：读取 <strong>find_barcodes()</strong> 函数返回的字典中键值为: <strong>corners</strong> 的列表中的值作为条形码的坐标(绿色框)。</li>
+<li>获取条形码信息：读取 <strong>find_barcodes()</strong> 函数返回的字典中键值为: <strong>payload</strong> 的值作为条形码信息。</li>
+<li>获取条形码类型：读取 <strong>find_barcodes()</strong> 函数返回的字典中键值为: <strong>type</strong> 的值作为条形码的类型 <strong>(注意：此处条形码类型选择的是 CODE39 ，故键值为 type 返回的值为 12 ，如果将条形码类型换为 CODE128 ，则键值为 type 返回的值为 15 )</strong>。</li>
+</ul>
+<p>字典的键值如下所示：'x' , 'y' , 'w' , 'h' , 'payload' , 'rotation' , 'type' , 'quality' , 'corners'。</p>
+<p>在此仅介绍简单几个键值的含义。'corners' 键值返回的是一个列表，列表中的值分别条形码四个顶点的坐标。<strong>而键值 'type' 返回的值是条形码的类型，'payload' 返回的值是条形码的内容</strong>。</p>
+
+</div>
+</div>
+
+
+
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/soft/maixpy3/zh/usage/vision/maixpy3-example.html">
+                            <span class="icon"></span>
+                            <span class="label">基础用法</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/soft/maixpy3/zh/usage/hardware/GPIO.html">
+                            <span class="label">GPIO （点灯）</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc">
+                <div id="toc_content">
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://www.sipeed.com">Sipeed</a></li>
+<li><a target="_blank" href="https://bbs.sipeed.com/">BBS 论坛</a></li>
+<li><a target="_blank" href="https://maixhub.sipeed.com/">Maixhub</a></li>
+<li><a target="_blank" href="https://sipeed.taobao.com/">Sipeed 淘宝</a></li>
+<li><a target="_blank" href="https://github.com/neutree/teedoc">网站使用 teedoc 生成</a></li>
+</ul>
+</li>
+<li><a>网站统计</a><ul><li><a target="_blank" href="https://tongji.baidu.com/web/welcome/ico?s=9cb07365544a53067c56c346c838181a">百度统计</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/sipeed/sipeed_wiki">文档源文件</a></li>
+<li><a target="_blank" href="https://github.com/sipeed">开源项目源码</a></li>
+</ul>
+</li>
+<li><a>关注我们</a><ul><li><a target="_blank" href="https://github.com/sipeed">github</a></li>
+<li><a target="_blank" href="https://twitter.com/SipeedIO">twitter</a></li>
+<li><a target="_blank" href="https://sipeed.taobao.com/">淘宝</a></li>
+<li><a  href="/community.html">更多</a></li>
+</ul>
+</li>
+<li><a>联系我们</a><ul><li><a>电话: +86 0755-27808509</a>
+</li>
+<li><a>商业支持: support@sipeed.com</a>
+</li>
+<li><a>地址: 深圳市宝安区新湖路4008号蘅芳科技办公大厦A座-2101C</a>
+</li>
+<li><a  href="/join_us.html">加入我们</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://www.sipeed.com">©2018-2021 深圳矽速科技有限公司</a></li>
+<li><a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备19015433号-1</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script type="text/javascript">
+                var transLoaded = false;
+                var loading = false;
+                var domain = "/";
+                var domainDefault = domain;
+                var storeDomain = localStorage.getItem("googleTransDomain");
+                if(storeDomain){
+                    domain = storeDomain;
+                }
+                function getUrl(domain){
+                    if(domain == "/")
+                        return "/static/js/google_translate/element.js?cb=googleTranslateElementInit";
+                    else
+                        return "https://" + domain + "/translate_a/element.js?cb=googleTranslateElementInit";
+                }
+                var url = getUrl(domain);
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: "auto", layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+                function loadJS( url, callback ){
+                    var script = document.createElement('script');
+                    fn = callback || function(){ };
+                    script.type = 'text/javascript';
+                    if(script.readyState){
+                        script.onreadystatechange = function(){
+                            if( script.readyState == 'loaded' || script.readyState == 'complete' ){
+                                script.onreadystatechange = null;
+                                fn();
+                            }
+                        };
+                    }else{
+                        script.onload = function(){
+                            fn();
+                        };
+                    }
+                    script.src = url;
+                    document.getElementsByTagName('head')[0].appendChild(script);
+                }
+                function removeHint(){
+                    var hint = document.getElementById("loadingTranslate");
+                    if(hint){
+                        hint.remove();
+                    }
+                }
+                var btn = document.getElementById("google_translate_element");
+                btn.onclick = function(){
+                    if(transLoaded) return;
+                    if(loading){
+                        var flag = confirm("loading from " + domain + ", please wait, or change domain?");
+                        if(flag){
+                            newDomain = prompt("domain, default: " + domainDefault + ", now: " + domain);
+                            if(newDomain){
+                                domain = newDomain;
+                                console.log(domain);
+                                url = getUrl(domain);
+                                loadJS(url, function(){
+                                    localStorage.setItem("googleTransDomain", domain);
+                                    removeHint()
+                                    transLoaded = true;
+                                });
+                            }
+                        }
+                        return;
+                    }
+                    btn.innerHTML = '<span id="loadingTranslate"><img class="icon" src="/static/image/google_translate/translate.svg"/>Loading ...</span>';
+                    loading = true;
+                    loadJS(url, function(){
+                        localStorage.setItem("googleTransDomain", domain);
+                        removeHint()
+                        transLoaded = true;
+                    });
+                }
+                </script>
+            
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/gitalk/gitalk.min.js"></script>
+    
+        <script src="/static/js/gitalk/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+</html>
